@@ -1,0 +1,22 @@
+server:
+    host: 8080
+    
+spring:
+    application:
+        name: ZuulProxy
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    servicea:
+      path: /**
+      serviceId: DemoServiceA
+       
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
