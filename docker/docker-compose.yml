@@ -1,0 +1,47 @@
+# --------------
+# registry
+# --------------
+service-registry:
+    hostname: discovery
+    build: ../demo-registry/target
+    ports:
+        - "8761:8080"
+    environment:
+        - SPRING_PROFILES_ACTIVE=docker
+        
+# --------------
+# zuul proxy
+# --------------
+zuul-proxy:
+    hostname: zuul
+    build: ../demo-proxy/target
+    ports:
+        - "8080:8080"
+    links:
+        - service-registry
+    environment:
+        - SPRING_PROFILES_ACTIVE=docker
+        
+# --------------
+# service a
+# --------------
+service-a:
+    build: ../demo-service-a/target
+    ports:
+        - "8080"
+    links:
+        - service-registry
+    environment:
+        - SPRING_PROFILES_ACTIVE=docker
+        
+# --------------
+# service b
+# --------------
+service-b:
+    build: ../demo-service-b/target
+    ports:
+        - "8080"
+    links:
+        - service-registry
+    environment:
+        - SPRING_PROFILES_ACTIVE=docker
