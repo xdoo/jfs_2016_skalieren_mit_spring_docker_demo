@@ -13,9 +13,6 @@ eureka.client:
     registerWithEureka: false
     fetchRegistry: false
 
-# use always the standard server port
-server:
-  port: 8761
   
 ---
 # LOCAL CONFIGURATION
@@ -28,6 +25,9 @@ endpoints:
   health:
     sensitive: false
 
+# use always the standard server port
+server.port: 8761
+
 ---
 # DOCKER CONFIGURATION
 spring:
@@ -35,3 +35,6 @@ spring:
 eureka:
   instance:
     hostname: discovery
+    
+# server port will be mapped with docker
+server.port: 8080
