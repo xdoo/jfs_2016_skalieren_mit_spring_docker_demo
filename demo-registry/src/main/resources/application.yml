@@ -1,13 +1,37 @@
-## YAML Template.
+# GLOBAL CONFIGURATION
+spring:
+    # if you want to set a different profile
+    # use environment variable:
+    #
+    # SPRING_PROFILES_ACTIVE=docker
+    profiles.active: local
+    cloud.config.discovery.enabled: true
+    application.name: discovery
+
+# don't register with your self
+eureka.client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+# use always the standard server port
 server:
   port: 8761
   
+---
+# LOCAL CONFIGURATION
+spring:
+  profiles: local
 eureka:
   instance:
     hostname: localhost
-    preferIpAddress: true
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+endpoints:
+  health:
+    sensitive: false
+
+---
+# DOCKER CONFIGURATION
+spring:
+  profiles: docker
+eureka:
+  instance:
+    hostname: discovery

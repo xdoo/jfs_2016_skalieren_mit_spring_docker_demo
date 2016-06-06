@@ -18,6 +18,6 @@ public class DemoServiceBApplication {
 
     @RequestMapping(value = "/hello_b", method = RequestMethod.GET)
     public String hello() {
-        return "Hello from Service B!";
+        return "Hello from Service 'B'!";
     }
 }

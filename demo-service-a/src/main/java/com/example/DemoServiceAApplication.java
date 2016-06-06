@@ -23,6 +23,6 @@ public class DemoServiceAApplication {
 
     @RequestMapping("/hello_a")
     public String hello() {
-        return "send via service b > " + client.hello();
+        return "Send via service 'A' > " + client.hello();
     }
 }
