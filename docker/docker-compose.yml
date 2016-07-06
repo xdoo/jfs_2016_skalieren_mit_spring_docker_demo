@@ -5,7 +5,7 @@ service-registry:
     hostname: discovery
     build: ../demo-registry/target
     ports:
-        - "8761:8080"
+        - "8761:8761"
     environment:
         - SPRING_PROFILES_ACTIVE=docker
         
@@ -16,7 +16,7 @@ zuul-proxy:
     hostname: zuul
     build: ../demo-proxy/target
     ports:
-        - "8080:8080"
+        - "80:8080"
     links:
         - service-registry
     environment:
