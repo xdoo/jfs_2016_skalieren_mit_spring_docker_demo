@@ -28,6 +28,6 @@ public class DemoServiceAApplication {
     @RequestMapping("/hello_a")
     public String hello() {
         LOG.log(Level.INFO, "requested Service A");
-        return "Send via service 'A' > " + client.hello();
+        return "Send via service 'A' > " + client.hello() + "\n";
     }
 }
