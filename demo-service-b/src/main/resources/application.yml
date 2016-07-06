@@ -5,7 +5,7 @@ spring:
     #
     # SPRING_PROFILES_ACTIVE=docker
     profiles.active: local
-    application.name: DemoServiceB
+    application.name: ServiceB
         
 eureka.instance:
     # send ip addresses to the discovery. this is

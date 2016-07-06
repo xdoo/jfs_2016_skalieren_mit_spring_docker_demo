@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author claus
  */
-@FeignClient(value = "DemoServiceB", fallback = ServiceBClientFallback.class)
+@FeignClient(value = "ServiceB", fallback = ServiceBClientFallback.class)
 public interface ServiceBClient {
     
     @RequestMapping(value = "/hello_b", method = RequestMethod.GET)
