@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableEurekaClient
 @EnableFeignClients
-public class DemoServiceAApplication {
+public class Application {
 
-    private static final Logger LOG= Logger.getLogger( DemoServiceAApplication.class.getName() );
+    private static final Logger LOG= Logger.getLogger(Application.class.getName() );
     
     @Autowired
     ServiceBClient client;
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoServiceAApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @RequestMapping("/hello_a")
