@@ -16,7 +16,7 @@ zuul:
   routes:
     servicea:
       path: /servicea/**
-      serviceId: DemoServiceA
+      serviceId: ServiceA
 
 ---
 # LOCAL CONFIGURATION

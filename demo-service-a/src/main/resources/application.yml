@@ -5,7 +5,7 @@ spring:
     #
     # SPRING_PROFILES_ACTIVE=docker
     profiles.active: local
-    application.name: DemoServiceA
+    application.name: ServiceA
         
 
 eureka:
