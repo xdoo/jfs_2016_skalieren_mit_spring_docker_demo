@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableEurekaClient
-public class DemoServiceBApplication {
+public class Application {
     
-    private static final Logger LOG= Logger.getLogger( DemoServiceBApplication.class.getName() );
+    private static final Logger LOG= Logger.getLogger(Application.class.getName() );
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoServiceBApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @RequestMapping(value = "/hello_b", method = RequestMethod.GET)
