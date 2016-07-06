@@ -15,7 +15,7 @@ zuul:
   ignoredServices: '*'
   routes:
     servicea:
-      path: /**
+      path: /servicea/**
       serviceId: DemoServiceA
 
 ---
