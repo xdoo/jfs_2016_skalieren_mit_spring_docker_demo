@@ -20,7 +20,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @RequestMapping(value = "/hello_b", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
         LOG.log(Level.INFO, "requested Service B...");
         return "Hello from Service 'B'!";

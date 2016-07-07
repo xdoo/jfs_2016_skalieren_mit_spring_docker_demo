@@ -25,7 +25,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @RequestMapping("/hello_a")
+    @RequestMapping("/hello")
     public String hello() {
         LOG.log(Level.INFO, "requested Service A");
         return "Send via service 'A' > " + client.hello() + "\n";

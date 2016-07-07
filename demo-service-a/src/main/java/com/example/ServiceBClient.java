@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "ServiceB", fallback = ServiceBClientFallback.class)
 public interface ServiceBClient {
     
-    @RequestMapping(value = "/hello_b", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     String hello();
     
 }
